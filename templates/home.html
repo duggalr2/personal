@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load staticfiles %}
 
-<h1>Home</h1>
 
-</body>
-</html>
+{% block content %}
+
+{#    {% now "jS F Y H:i" %}#}
+{#    <h1>Books</h1>#}
+{#    <h1>Courses</h1>#}
+{#    <h1>Projects</h1>#}
+{#    <h1>Schedule</h1>#}
+
+<div class="ui two column grid">
+  <div class="row">
+    <div class="column">Books</div>
+    <div class="column">Courses</div>
+  </div>
+  <div class="column">Schedule</div>
+  <div class="column">Projects</div>
+
+</div>
+
+
+    <form class="book_form" method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        {{ forms.book.as_p }}
+        <button name='action' value='book' type="submit">Submit</button>
+    </form>
+
+
+
+{% endblock %}
