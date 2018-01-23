@@ -20,7 +20,15 @@ from dashboard import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/', views.home, name='home'),
-    url(r'^book_create/', views.BookCreate.as_view(), name='book'),
+    url(r'^home/', views.Home.as_view(), name='home'),
+    url(r'^book_create$', views.book_crete, name='book_create'),
+    url(r'^book_update/(?P<pk>\d+)$', views.book_update, name='book_update'),
+    url(r'^book_delete/(?P<pk>\d+)$', views.book_delete, name='book_delete'),
+    url(r'^project_create$', views.project_create, name='project_create'),
+    url(r'^project_update/(?P<pk>\d+)$', views.project_update, name='project_update'),
+    url(r'^project_delete/(?P<pk>\d+)$', views.project_delete, name='project_delete'),
+    url(r'^course_create$', views.course_create, name='course_create'),
+    url(r'^course_update/(?P<pk>\d+)$', views.course_update, name='course_update'),
+    url(r'^course_delete/(?P<pk>\d+)$', views.course_delete, name='course_delete'),
 ]
 

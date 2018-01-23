@@ -2,10 +2,10 @@ from django.forms import ModelForm
 from dashboard.models import Book, Project, Course
 
 
-# class BookForm(ModelForm):
-#     class Meta:
-#         model = Book
-#         fields = ['book_name']
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+        fields = ['book_name']
 
 
 class ProjectForm(ModelForm):

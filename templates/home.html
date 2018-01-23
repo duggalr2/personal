@@ -5,28 +5,73 @@
 {% block content %}
 
 {#    {% now "jS F Y H:i" %}#}
-{#    <h1>Books</h1>#}
-{#    <h1>Courses</h1>#}
-{#    <h1>Projects</h1>#}
-{#    <h1>Schedule</h1>#}
 
 <div class="ui two column grid">
-  <div class="row">
-    <div class="column">Books</div>
-    <div class="column">Courses</div>
-  </div>
+    <div class="row">
+
+        <div class="column">Books <a href="{% url 'book_create' %}">Create book</a>
+          <br/>
+
+          {% for i in book %}
+
+              - {{ i.book_name }}
+
+              <a href="{% url 'book_update' pk=i.id %}">Update</a>
+
+              <a href="{% url 'book_delete' pk=i.id %}">Delete</a>
+
+              <br/>
+
+          {% endfor %}
+
+      </div>
+
+    <div class="column">Courses <a href="{% url 'course_create' %}">Create course</a>
+          <br/>
+
+      {% for i in course %}
+
+          {{ i.id }} {{ i.course_name }}
+          <a href="{% url 'course_update' pk=i.id %}">Update</a>
+          <a href="{% url 'course_update' pk=i.id %}">Delete</a>
+
+          <br/>
+
+      {% endfor %}
+
+
+    </div>
+
+
+
+    </div>
+
+
   <div class="column">Schedule</div>
-  <div class="column">Projects</div>
+
+  <div class="column">Projects  <a href="{% url 'project_create' %}">Create project</a>
+      <br/>
+
+          {% for i in project %}
+
+              {{ i.id }} {{ i.project_name }}
+              <a href="{% url 'project_update' pk=i.id %}">Update</a>
+              <a href="{% url 'project_delete' pk=i.id %}">Delete</a>
+              <br/>
+              -- {{ i.project_description }}
+
+
+
+              <br/>
+
+          {% endfor %}
+
+
+
+  </div>
+
 
 </div>
-
-
-{#    <form class="book_form" method="POST" action="{% url 'home' %}">#}
-{#        {% csrf_token %}#}
-{#        {{ forms.book.as_p }}#}
-{#        <button name='action' value='book' type="submit">Submit</button>#}
-{#    </form>#}
-{##}
 
 
 {% endblock %}
