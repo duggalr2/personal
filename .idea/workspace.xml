@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3deda9-3924-4c0c-a817-f1de10812cb4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/coverage_html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/dashboard___init__.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/dashboard_admin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/dashboard_migrations_0001_initial.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/dashboard_migrations___init__.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/dashboard_models.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/jquery-1.4.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/jquery.hotkeys.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/jquery.isonscreen.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/jquery.tablesorter.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/keybd_closed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/keybd_open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/manage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/personal___init__.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/personal_settings.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/status.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/htmlcov/style.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/forms.py" afterPath="$PROJECT_DIR$/dashboard/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/models.py" afterPath="$PROJECT_DIR$/dashboard/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/tests.py" afterPath="$PROJECT_DIR$/dashboard/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal/settings.py" afterPath="$PROJECT_DIR$/personal/settings.py" />
     </list>
     <ignored path="personal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,21 +29,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="435">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rss_feed.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my_project_visualized.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_project_visualized.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/personal/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rss_feed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/scripts/rss_feed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="-233">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#74#0" expanded="true" />
                 <marker date="1517252270856" expanded="true" signature="1872:1906" ph="SELECT MAX(i... app_file_feeds" />
@@ -98,9 +94,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,13 +146,13 @@
         <option value="$PROJECT_DIR$/templates/book_create.html" />
         <option value="$PROJECT_DIR$/templates/book_form.html" />
         <option value="$PROJECT_DIR$/personal/urls.py" />
-        <option value="$PROJECT_DIR$/personal/settings.py" />
         <option value="$PROJECT_DIR$/dashboard/tests.py" />
         <option value="$PROJECT_DIR$/dashboard/forms.py" />
-        <option value="$PROJECT_DIR$/dashboard/views.py" />
-        <option value="$PROJECT_DIR$/dashboard/models.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/dashboard/scripts/rss_feed.py" />
+        <option value="$PROJECT_DIR$/personal/settings.py" />
+        <option value="$PROJECT_DIR$/dashboard/models.py" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
       </list>
     </option>
   </component>
@@ -270,7 +268,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="view&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;hom&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;mod&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;ho&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;tes&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/tests.py&#10;mo&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;home&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;url&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;urls&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;book_&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/book_form.html&#10;vie&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;views&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;i&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;form&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;forms&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/book_form.html&#10;book&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/book_form.html" />
+    <property name="SearchEverywhereHistoryKey" value="mod&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;png&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/my_project_visualized.png&#10;view&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;m&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;hom&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;ho&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;tes&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/tests.py&#10;mo&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;home&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;url&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;urls&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;book_&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/book_form.html&#10;vie&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;views&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;i&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;form&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;forms&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/book_form.html&#10;book&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/book_form.html" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Django server.personal">
@@ -617,7 +615,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,14 +671,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/book_create.html" />
-    <entry file="file://$PROJECT_DIR$/personal/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/book_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -737,32 +729,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/scripts/rss_feed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="-233">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#74#0" expanded="true" />
             <marker date="1517252270856" expanded="true" signature="1872:1906" ph="SELECT MAX(i... app_file_feeds" />
             <marker date="1517252270856" expanded="true" signature="2292:2338" ph="INSERT INTO app_file_feeds... " />
             <marker date="1517252270856" expanded="true" signature="2547:2573" ph="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_project_visualized.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

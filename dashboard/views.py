@@ -15,7 +15,7 @@ from .forms import CourseForm, ProjectForm, BookForm
 from multi_form_view import MultiModelFormView
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
-from django.core.urlresolvers import reverse_lazy
+
 
 
 class Home(TemplateView):

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'dashboard',
+    'django_extensions',
     'coverage',
     'django.contrib.admin',
     'django.contrib.auth',
