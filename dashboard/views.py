@@ -97,3 +97,4 @@ def course_delete(request, pk):
     book = get_object_or_404(Course, pk=pk)
     book.delete()
     return redirect('home')
+

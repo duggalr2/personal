@@ -14,7 +14,7 @@
 
           {% for i in book %}
 
-              - {{ i.book_name }}
+              - {{ i.book_name }} by: {{ i.book_author }}
 
               <a href="{% url 'book_update' pk=i.id %}">Update</a>
 
@@ -31,9 +31,9 @@
 
       {% for i in course %}
 
-          {{ i.id }} {{ i.course_name }}
+          - {{ i.course_name }}
           <a href="{% url 'course_update' pk=i.id %}">Update</a>
-          <a href="{% url 'course_update' pk=i.id %}">Delete</a>
+          <a href="{% url 'course_delete' pk=i.id %}">Delete</a>
 
           <br/>
 
@@ -54,18 +54,15 @@
 
           {% for i in project %}
 
-              {{ i.id }} {{ i.project_name }}
+              - {{ i.project_name }}
               <a href="{% url 'project_update' pk=i.id %}">Update</a>
               <a href="{% url 'project_delete' pk=i.id %}">Delete</a>
               <br/>
-              -- {{ i.project_description }}
-
-
-
-              <br/>
+              {# TODO: add a show for description, like hackernews #}
+              {#              -- {{ i.project_description }}#}
+              {#              <br/>#}
 
           {% endfor %}
-
 
 
   </div>

@@ -25,3 +25,4 @@ class BookTest(TestCase):
         data = {'book_name': w.book_name}
         form = BookForm(data=data)
         self.assertFalse(form.is_valid())
+

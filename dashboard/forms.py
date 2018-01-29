@@ -5,7 +5,7 @@ from dashboard.models import Book, Project, Course
 class BookForm(ModelForm):
     class Meta:
         model = Book
-        fields = ['book_name']
+        fields = ['book_name', 'book_author']
 
 
 class ProjectForm(ModelForm):
