@@ -31,6 +31,17 @@ class Tweet(models.Model):
     tweet = models.CharField(max_length=1000)
 
 
+class Day(models.Model):
+    day = models.CharField(max_length=500)
+
+
+class TodoItem(models.Model):
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
+    todo_item = models.CharField(max_length=2000)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+
 # class FeedUrl(models.Model):
 #     url = models.URLField(max_length=500)
 
