@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+
 # from django.contrib.auth import login, authenticate
 # from django.urls import reverse_lazy
 # from django.contrib.auth.decorators import login_required
@@ -10,12 +10,13 @@ from django.shortcuts import render, redirect
 # from django.contrib.auth.decorators import user_passes_test
 # from django.conf import settings
 # from django.views.generic.list import ListView
+# from multi_form_view import MultiModelFormView
+from django.shortcuts import render, redirect
 from .models import Book, Project, Course, FeedDetail, Tweet
 from .forms import CourseForm, ProjectForm, BookForm
-# from multi_form_view import MultiModelFormView
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
-
+from .scripts import rss_feed, tweet_feed
 
 
 class Home(TemplateView):
@@ -30,6 +31,16 @@ class Home(TemplateView):
         context['rss_feed'] = FeedDetail.objects.all()[:10]
         context['tweet_feed'] = Tweet.objects.all()[:10]
         return context
+
+
+def feed_refresh(request):
+    rss_feed.run_it()
+    return redirect('home')
+
+
+def tweet_refresh(request):
+    tweet_feed.execute_tweets()
+    return redirect('home')
 
 
 def book_crete(request):

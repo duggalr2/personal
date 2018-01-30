@@ -68,7 +68,7 @@
   </div>
 
 
-  <div class="column">Recent News <a href="{% url 'rssFeed' %}">More</a>
+  <div class="column">Recent News <a href="{% url 'rssFeed' %}">More</a> <a href="{% url 'feed_refresh' %}">Refresh Feed</a>
       <br/>
 
           {% for i in rss_feed %}
@@ -81,7 +81,7 @@
 
   </div>
 
-  <div class="column">Recent Tweets <a href="{% url 'tweetFeed' %}">More</a>
+  <div class="column">Recent Tweets <a href="{% url 'tweetFeed' %}">More</a> <a href="{% url 'tweet_refresh' %}">Refresh Tweets</a>
       <br/>
 
           {% for i in tweet_feed %}

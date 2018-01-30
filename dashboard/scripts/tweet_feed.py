@@ -1,6 +1,7 @@
 import tweepy
 import sqlite3
 
+# TODO: NEED TO UNPULL TO REMOVE THE SECRET KEY............
 
 CONSUMER_KEY = 'DIVFNO658PjKMozopS1oLMOwo'
 CONSUMER_SECRET = 'f8f8waBmcifaoiz0ohfwDMG3YPq0qnKzOL4aSRGBUb3JR2wc6g'
@@ -27,7 +28,7 @@ class UserTweets(object):
         return tweet_info
 
 
-conn = sqlite3.connect('/Users/Rahul/Desktop/Side_projects/personal/db.sqlite3')
+conn = sqlite3.connect('/Users/Rahul/Desktop/Side_projects/personal/db.sqlite3', check_same_thread=False)
 c = conn.cursor()
 
 
@@ -44,6 +45,3 @@ def execute_tweets():
         recent_primary_key += 1
         c.execute('INSERT INTO dashboard_tweet (id, tweet) VALUES (?, ?)', (recent_primary_key, tweet[0]))
         conn.commit()
-
-# if __name__ == '__main__':
-#     execute_tweets()

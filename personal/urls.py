@@ -31,6 +31,8 @@ urlpatterns = [
     url(r'^course_update/(?P<pk>\d+)$', views.course_update, name='course_update'),
     url(r'^course_delete/(?P<pk>\d+)$', views.course_delete, name='course_delete'),
     url(r'^feed/', views.rssFeed, name='rssFeed'),
+    url(r'^feed_refresh/', views.feed_refresh, name='feed_refresh'),
+    url(r'^tweet_refresh/', views.tweet_refresh, name='tweet_refresh'),
     url(r'^tweet/', views.tweetFeed, name='tweetFeed'),
 ]
 
