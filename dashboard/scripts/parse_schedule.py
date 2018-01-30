@@ -7,7 +7,7 @@ f = open('schedule')
 lines = f.readlines()
 lines = [line.replace('\n', '') for line in lines]
 
-days = ['Monday:', 'Tuesday:', 'Wednesday:', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+days = ['Monday:', 'Tuesday:', 'Wednesday:', 'Thursday:', 'Friday:', 'Saturday:', 'Sunday:']
 
 temp = []
 index_temp = 0
@@ -31,13 +31,15 @@ for line in lines:
         day_recent_primary_key += 1
         temp.append(line[:-1])
         c.execute('INSERT INTO dashboard_day (id, day) VALUES (?, ?)', (day_recent_primary_key, line[:-1]))
+        conn.commit()
         index_temp = temp.index(line[:-1])
     if '- ' in line:
         line_recent_primary_key += 1
         day = temp[index_temp]
         line = line.split(' ')
         start_time = line[1]
-        end_time = line[3]
+        end_time = line[3][:-1]
         todo_item = ' '.join(line[4:])
-        c.execute('INSERT INTO dashboard_todoitem (id, dashboard_day, todo_item, start_time, end_time) VALUES (?, ?)',
-                  (line_recent_primary_key + 1, line[:-1]))
+        c.execute('INSERT INTO dashboard_todoitem (id, day_id, todo_item, start_time, end_time) VALUES (?, ?, ?, ?, ?)',
+                  (line_recent_primary_key, day, todo_item, start_time, end_time))
+        conn.commit()

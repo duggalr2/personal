@@ -11,7 +11,7 @@
 # from django.views.generic.list import ListView
 # from multi_form_view import MultiModelFormView
 from django.shortcuts import render, redirect
-from .models import Book, Project, Course, FeedDetail, Tweet
+from .models import Book, Project, Course, FeedDetail, Tweet, TodoItem
 from .forms import CourseForm, ProjectForm, BookForm
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
@@ -29,6 +29,7 @@ class Home(TemplateView):
         context['project'] = Project.objects.all()
         context['rss_feed'] = FeedDetail.objects.all()[:10]
         context['tweet_feed'] = Tweet.objects.all()[:10]
+        # context['schedule'] = TodoItem.objects.all()
         return context
 
 
