@@ -30,5 +30,7 @@ urlpatterns = [
     url(r'^course_create$', views.course_create, name='course_create'),
     url(r'^course_update/(?P<pk>\d+)$', views.course_update, name='course_update'),
     url(r'^course_delete/(?P<pk>\d+)$', views.course_delete, name='course_delete'),
+    url(r'^feed/', views.rssFeed, name='rssFeed'),
+    url(r'^tweet/', views.tweetFeed, name='tweetFeed'),
 ]
 

@@ -68,6 +68,38 @@
   </div>
 
 
+  <div class="column">Recent News <a href="{% url 'rssFeed' %}">More</a>
+      <br/>
+
+          {% for i in rss_feed %}
+
+              - {{ i.title }}
+
+              <br/>
+
+          {% endfor %}
+
+  </div>
+
+  <div class="column">Recent Tweets <a href="{% url 'tweetFeed' %}">More</a>
+      <br/>
+
+          {% for i in tweet_feed %}
+
+              - {{ i.tweet }}
+
+              <br/>
+
+          {% endfor %}
+
+
+  </div>
+
+
+
+
+
+
 </div>
 
 

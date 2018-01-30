@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+    <a href="{% url 'home' %}">Home</a> <br/>
+    {% for feed in rss_feed %}
+        - <a href="{{ feed.story_url }}">{{ feed.title }}</a>
+        <br/>
+    {% endfor %}
+
+{% endblock %}

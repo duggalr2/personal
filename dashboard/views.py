@@ -1,18 +1,18 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.urls import reverse_lazy
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.contrib import messages
-from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
-import ast
-from django.contrib.auth.decorators import user_passes_test
-from django.conf import settings
-from django.views.generic.list import ListView
-from .models import Book, Project, Course
+# from django.contrib.auth import login, authenticate
+# from django.urls import reverse_lazy
+# from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.models import User
+# from django.contrib import messages
+# from django.contrib.auth import update_session_auth_hash
+# from django.contrib.auth.forms import PasswordChangeForm
+# import ast
+# from django.contrib.auth.decorators import user_passes_test
+# from django.conf import settings
+# from django.views.generic.list import ListView
+from .models import Book, Project, Course, FeedDetail, Tweet
 from .forms import CourseForm, ProjectForm, BookForm
-from multi_form_view import MultiModelFormView
+# from multi_form_view import MultiModelFormView
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
 
@@ -27,6 +27,8 @@ class Home(TemplateView):
         context['book'] = Book.objects.all()
         context['course'] = Course.objects.all()
         context['project'] = Project.objects.all()
+        context['rss_feed'] = FeedDetail.objects.all()[:10]
+        context['tweet_feed'] = Tweet.objects.all()[:10]
         return context
 
 
@@ -98,3 +100,12 @@ def course_delete(request, pk):
     book.delete()
     return redirect('home')
 
+
+def rssFeed(request):
+    rss_feed = FeedDetail.objects.all()
+    return render(request, 'rss_feed.html', {'rss_feed': rss_feed})
+
+
+def tweetFeed(request):
+    tweet_feed = Tweet.objects.all()
+    return render(request, 'tweet_feed.html', {'tweet_feed': tweet_feed})
