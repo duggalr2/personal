@@ -4,7 +4,6 @@
 
 {% block content %}
 
-{#    {% now "jS F Y H:i" %}#}
 
 <div class="ui two column grid">
     <div class="row">
@@ -47,7 +46,20 @@
     </div>
 
 
-  <div class="column">Schedule</div>
+  <div class="column">Schedule
+
+      {{ current_time }}
+      {% for day in schedule %}
+          {% if day.day_id == current_day %}
+              <br/>
+              {% if day.start_time <= current_time.time %}
+                  {{ day.todo_item }}
+              {% endif %}
+{#              {{ day.start_time }} to {{ day.end_time }}: {{ day.todo_item }}#}
+          {% endif %}
+      {% endfor %}
+
+  </div>
 
   <div class="column">Projects  <a href="{% url 'project_create' %}">Create project</a>
       <br/>

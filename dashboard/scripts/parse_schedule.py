@@ -8,6 +8,15 @@ lines = f.readlines()
 lines = [line.replace('\n', '') for line in lines]
 
 days = ['Monday:', 'Tuesday:', 'Wednesday:', 'Thursday:', 'Friday:', 'Saturday:', 'Sunday:']
+days_dict = {
+            'Monday': 1,
+            'Tuesday': 2,
+            'Wednesday': 3,
+            'Thursday': 4,
+            'Friday': 5,
+            'Saturday': 6,
+            'Sunday': 7,
+             }
 
 temp = []
 index_temp = 0
@@ -36,6 +45,7 @@ for line in lines:
     if '- ' in line:
         line_recent_primary_key += 1
         day = temp[index_temp]
+        # day_num = days_dict.get(day)
         line = line.split(' ')
         start_time = line[1]
         end_time = line[3][:-1]

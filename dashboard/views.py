@@ -16,6 +16,8 @@ from .forms import CourseForm, ProjectForm, BookForm
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
 from .scripts import rss_feed, tweet_feed
+from datetime import datetime
+from pytz import timezone
 
 
 class Home(TemplateView):
@@ -29,7 +31,14 @@ class Home(TemplateView):
         context['project'] = Project.objects.all()
         context['rss_feed'] = FeedDetail.objects.all()[:10]
         context['tweet_feed'] = Tweet.objects.all()[:10]
-        # context['schedule'] = TodoItem.objects.all()
+        context['schedule'] = TodoItem.objects.all()
+        context['current_day'] = datetime.now().strftime("%A")
+        now_time = timezone('US/Eastern')
+        sa_time = datetime.now(now_time)
+        time = sa_time.strftime('%H:%M')
+        d = datetime.strptime(time, "%H:%M")
+        context['current_time'] = {'time': str(d.strftime("%I:%M %p")).split(' ')[0],
+                                   'at': str(d.strftime("%I:%M %p")).split(' ')[-1]}
         return context
 
 

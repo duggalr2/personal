@@ -41,6 +41,9 @@ class TodoItem(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
 
+    def __str__(self):
+        return self.day.day
+
 
 # class FeedUrl(models.Model):
 #     url = models.URLField(max_length=500)
