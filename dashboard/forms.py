@@ -1,5 +1,8 @@
+from django import forms
 from django.forms import ModelForm
 from dashboard.models import Book, Project, Course
+from datetime import datetime
+from pytz import timezone
 
 
 class BookForm(ModelForm):
@@ -19,3 +22,20 @@ class CourseForm(ModelForm):
         model = Course
         fields = ['course_name']
 
+DAY_CHOICES = (
+    ('Monday', 'Monday'),
+    ('Tuesday', 'Tuesday'),
+    ('Wednesday', 'Wednesday'),
+    ('Thursday', 'Thursday'),
+    ('Friday', 'Friday'),
+    ('Saturday', 'Saturday'),
+    ('Sunday', 'Sunday'),
+)
+
+
+class ReminderForm(forms.Form):
+    day = forms.ChoiceField(choices=DAY_CHOICES)
+    todo_item = forms.CharField(max_length=2000)
+    now_time = timezone('US/Eastern')
+    sa_time = datetime.now(now_time)
+    time = forms.TimeField(widget=forms.TextInput(attrs={'placeholder': '4:30 pm'}))

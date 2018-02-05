@@ -11,8 +11,8 @@
 # from django.views.generic.list import ListView
 # from multi_form_view import MultiModelFormView
 from django.shortcuts import render, redirect
-from .models import Book, Project, Course, FeedDetail, Tweet, TodoItem
-from .forms import CourseForm, ProjectForm, BookForm
+from .models import Book, Project, Course, FeedDetail, Tweet, TodoItem, Reminder
+from .forms import CourseForm, ProjectForm, BookForm, ReminderForm
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
 from .scripts import rss_feed, tweet_feed
@@ -36,6 +36,7 @@ class Home(TemplateView):
         now_time = timezone('US/Eastern')
         sa_time = datetime.now(now_time)
         context['current_time'] = sa_time
+        context['reminder'] = Reminder.objects.all()
         return context
 
 
@@ -126,3 +127,11 @@ def rssFeed(request):
 def tweetFeed(request):
     tweet_feed = Tweet.objects.all()
     return render(request, 'tweet_feed.html', {'tweet_feed': tweet_feed})
+
+# TODO: Build remaining portion of reminder form
+def reminder_create(request):
+    form = ReminderForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    return render(request, 'book_form.html', {'form': form})

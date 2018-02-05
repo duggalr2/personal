@@ -45,6 +45,13 @@ class TodoItem(models.Model):
         return self.day.day
 
 
+class Reminder(models.Model):
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
+    todo_item = models.CharField(max_length=2000)
+    time = models.TimeField(default=datetime.now().time())
+
+
+
 # class FeedUrl(models.Model):
 #     url = models.URLField(max_length=500)
 
