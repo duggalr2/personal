@@ -35,10 +35,7 @@ class Home(TemplateView):
         context['current_day'] = datetime.now().strftime("%A")
         now_time = timezone('US/Eastern')
         sa_time = datetime.now(now_time)
-        time = sa_time.strftime('%H:%M')
-        d = datetime.strptime(time, "%H:%M")
-        context['current_time'] = {'time': str(d.strftime("%I:%M %p")).split(' ')[0],
-                                   'at': str(d.strftime("%I:%M %p")).split(' ')[-1]}
+        context['current_time'] = sa_time
         return context
 
 

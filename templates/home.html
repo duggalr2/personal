@@ -46,16 +46,14 @@
     </div>
 
 
-  <div class="column">Schedule
-
-      {{ current_time }}
+  <div class="column">Schedule <br/>
       {% for day in schedule %}
           {% if day.day_id == current_day %}
-              <br/>
               {% if day.start_time <= current_time.time %}
-                  {{ day.todo_item }}
+                  {% if current_time.time <= day.end_time %}
+                        - {{ day.start_time }} to {{ day.end_time }}: {{ day.todo_item }}
+                  {% endif %}
               {% endif %}
-{#              {{ day.start_time }} to {{ day.end_time }}: {{ day.todo_item }}#}
           {% endif %}
       {% endfor %}
 

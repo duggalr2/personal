@@ -64,3 +64,6 @@ def run_it():
     results = pool.map(parse_feed, hit_list)
     for result in results:
         feed_execute(result)
+
+
+
