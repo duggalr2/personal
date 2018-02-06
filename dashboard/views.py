@@ -132,6 +132,10 @@ def tweetFeed(request):
 def reminder_create(request):
     form = ReminderForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        day = form.cleaned_data.get('day')
+        todo_item = form.cleaned_data.get('todo_item')
+        time = form.cleaned_data.get('time')
+        b = Reminder.objects.create(day=day, todo_item=todo_item, time=time)
+        b.save()
         return redirect('home')
     return render(request, 'book_form.html', {'form': form})

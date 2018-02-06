@@ -46,7 +46,7 @@ class TodoItem(models.Model):
 
 
 class Reminder(models.Model):
-    day = models.ForeignKey(Day, on_delete=models.CASCADE)
+    day = models.CharField(max_length=1000) # TODO: NEED TO LINK THIS TO ABOVE!
     todo_item = models.CharField(max_length=2000)
     time = models.TimeField(default=datetime.now().time())
 
