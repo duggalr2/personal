@@ -4,8 +4,6 @@
 
 {% block content %}
 
-
-
 <div class="ui two column grid">
     <div class="row">
 
@@ -49,6 +47,7 @@
 
   <div class="column">
       <button type="button" id="test">Schedule</button> <a href="{% url 'reminder_create' %}">Create Reminder</a> <br/>
+
       {% for day in schedule %}
           {% if day.day_id == current_day %}
               {% if day.start_time <= current_time.time %}
@@ -60,14 +59,16 @@
       {% endfor %}
 
         {% for i in reminder %}
-            {% if i.day == current_day %}
-                - {{ i.todo_item }}
-            {% endif %}
+             <br/>
+            - {{ i.time }}: {{ i.todo_item }} <a href="{% url 'reminder_delete' pk=i.id %}">Delete</a>
+{#            {% if i.day == current_day %}#}
+{#                - {{ i.todo_item }}#}
+{#            {% endif %}#}
         {% endfor %}
   </div>
 
 {# Schedule Modal #}
-	  <div class="ui modal test">
+<div class="ui modal test">
   <i class="close icon"></i>
   <div class="header">
     Schedule
@@ -123,7 +124,7 @@
 
           {% for i in rss_feed %}
 
-              - {{ i.title }}
+              - <a href="{{ i.story_url }}">{{ i.title }}</a>
 
               <br/>
 
@@ -156,15 +157,24 @@
 
 
    <script>
-$(function() {
-  $("#test").click(function() {
-    $(".test").modal("show");
-  });
-  $(".test").modal({
-    closable: true
-  });
-});
-</script>
+
+    $(window).on('load',function(){
+        $('.test').modal('show');
+    });
+
+   </script>
+
+    <script>
+    $(function() {
+      $("#test").click(function() {
+        $(".test").modal("show");
+      });
+      $(".test").modal({
+        closable: true
+      });
+    });
+
+    </script>
 
 
 {% endblock %}

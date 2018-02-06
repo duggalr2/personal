@@ -35,6 +35,7 @@ class Home(TemplateView):
         context['current_day'] = datetime.now().strftime("%A")
         now_time = timezone('US/Eastern')
         sa_time = datetime.now(now_time)
+        print(sa_time)
         context['current_time'] = sa_time
         context['reminder'] = Reminder.objects.all()
         return context
@@ -128,6 +129,7 @@ def tweetFeed(request):
     tweet_feed = Tweet.objects.all()
     return render(request, 'tweet_feed.html', {'tweet_feed': tweet_feed})
 
+
 # TODO: Build remaining portion of reminder form
 def reminder_create(request):
     form = ReminderForm(request.POST or None)
@@ -139,3 +141,10 @@ def reminder_create(request):
         b.save()
         return redirect('home')
     return render(request, 'book_form.html', {'form': form})
+
+
+def reminder_delete(request, pk):
+    reminder = get_object_or_404(Reminder, pk=pk)
+    reminder.delete()
+    return redirect('home')
+
