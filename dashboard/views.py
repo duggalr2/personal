@@ -148,3 +148,6 @@ def reminder_delete(request, pk):
     reminder.delete()
     return redirect('home')
 
+
+def update_session(request):
+    pass

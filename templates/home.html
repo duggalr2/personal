@@ -79,6 +79,7 @@
     </div>
     <div class="description">
       <div class="ui header">Schedule for {{ current_day }}</div>
+
         {% for day in schedule %}
             {% if day.day_id == current_day %}
                 - {{ day.start_time }} to {{ day.end_time }}: {{ day.todo_item }} <br/>
@@ -142,10 +143,7 @@
               <br/>
 
           {% endfor %}
-
-
   </div>
-
 
 
 </div>
