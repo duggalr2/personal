@@ -52,9 +52,16 @@ class Home(TemplateView):
                     y = datetime.combine(d, item.start_time)
                     w = datetime.combine(d, item.end_time)
                     if y <= sa_time.replace(tzinfo=None) <= w:
-                        print(item)
+                        # print(item.todo_item)
                         context['current_item'] = item
-
+                        # context['current_item_end_time'] = item.end_time
+                        #
+        item = context['current_item']
+        adjust_end_time = datetime.combine(d, item.end_time)
+        if adjust_end_time < sa_time.replace(tzinfo=None):
+            context['change'] = True
+        else:
+            context['change'] = False
         return context
 
 
