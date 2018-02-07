@@ -17,6 +17,7 @@ from django.views.generic import UpdateView, CreateView, DeleteView, TemplateVie
 from django.shortcuts import get_object_or_404
 from .scripts import rss_feed, tweet_feed
 from datetime import datetime
+from datetime import date
 from pytz import timezone
 
 
@@ -35,9 +36,25 @@ class Home(TemplateView):
         context['current_day'] = datetime.now().strftime("%A")
         now_time = timezone('US/Eastern')
         sa_time = datetime.now(now_time)
-        print(sa_time)
         context['current_time'] = sa_time
         context['reminder'] = Reminder.objects.all()
+        new = sa_time.strftime("%H:%M")
+        # print(sa_time, type(sa_time))
+        # print(new, type(new))
+        # print(TodoItem.objects.all()[0].start_time, type(TodoItem.objects.all()[0].start_time))
+        d = date.today()
+        # y = datetime.combine(d, TodoItem.objects.all()[0].start_time)
+        # print(y.replace(tzinfo=None) <= sa_time.replace(tzinfo=None))
+
+        for item in TodoItem.objects.all():
+            if item.day_id == datetime.now().strftime("%A"):
+                if item.end_time is not None:
+                    y = datetime.combine(d, item.start_time)
+                    w = datetime.combine(d, item.end_time)
+                    if y <= sa_time.replace(tzinfo=None) <= w:
+                        print(item)
+                        context['current_item'] = item
+
         return context
 
 
@@ -150,4 +167,5 @@ def reminder_delete(request, pk):
 
 
 def update_session(request):
-    pass
+    request.session['view'] = False
+

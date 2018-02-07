@@ -53,6 +53,7 @@
               {% if day.start_time <= current_time.time %}
                   {% if current_time.time <= day.end_time %}
                         - {{ day.start_time }} to {{ day.end_time }}: {{ day.todo_item }}
+                      {{ current_item }}
                   {% endif %}
               {% endif %}
           {% endif %}
@@ -156,9 +157,19 @@
 
    <script>
 
-    $(window).on('load',function(){
-        $('.test').modal('show');
-    });
+   $(document).ready(function() {
+       if(localStorage.getItem('popState') != 'shown'){
+               $(window).on('load',function(){
+                   $('.test').modal('show');
+                   localStorage.setItem('popState', 'shown')
+        });
+           if(localStorage.getItem('popState') == 'shown'){
+               {# TODO: Need to add if statement for time like schedule #}
+           }
+
+
+       }
+   })
 
    </script>
 
@@ -176,3 +187,6 @@
 
 
 {% endblock %}
+$(window).on('load',function(){
+        $('.test').modal('show');
+    });
