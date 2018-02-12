@@ -15,12 +15,11 @@ from .models import Book, Project, Course, FeedDetail, Tweet, TodoItem, Reminder
 from .forms import CourseForm, ProjectForm, BookForm, ReminderForm
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
-from .scripts import rss_feed, tweet_feed
+from .scripts import rss_feed, tweet_feed, send_notification
 from datetime import datetime
 from datetime import date
 from pytz import timezone
 import requests
-
 
 class Home(TemplateView):
     context_object_name = 'home_list'
@@ -66,6 +65,7 @@ class Home(TemplateView):
 
         r = requests.get('http://127.0.0.1:8000/profiles/?format=json')
         context['job_track'] = r.json()
+
         company_list = []
         profiles = {}
         for profile in r.json():
@@ -79,6 +79,13 @@ class Home(TemplateView):
                     temp_li.append(profile.get('linkedin_url'))
             profiles[company_list[0]] = temp_li
         context['job_track'] = profiles
+
+        # Sending Push Reminder Notifications to my phone
+        reminder_objects = Reminder.objects.all().filter(day=datetime.now().strftime("%A"))
+        for reminder in reminder_objects:
+            if reminder.time == sa_time:
+                send_notification.send_notification(reminder.todo_item)
+                print('Reminder Notification Sent!')
         return context
 
 

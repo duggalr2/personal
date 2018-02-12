@@ -152,7 +152,11 @@
 
           {% for i, k in job_track.items %}
 
-              - {{ i }}: {{ k }}
+              - {{ i }}: <br/>
+              {% for w in k %}
+                  -->{{ w }} <br/>
+              {% endfor %}
+
 
               <br/>
 
