@@ -55,8 +55,8 @@ class Home(TemplateView):
                         # print(item.todo_item)
                         context['current_item'] = item
                         # context['current_item_end_time'] = item.end_time
-                        #
-        item = context['current_item'] # TODO: BUG WITH CURRENT ITEM!
+
+        item = context['current_item'] # TODO: BUG WITH CURRENT ITEM; In between rest time, shows error with current_item
         adjust_end_time = datetime.combine(d, item.end_time)
         if adjust_end_time < sa_time.replace(tzinfo=None):
             context['change'] = True
@@ -83,9 +83,10 @@ class Home(TemplateView):
         # Sending Push Reminder Notifications to my phone
         reminder_objects = Reminder.objects.all().filter(day=datetime.now().strftime("%A"))
         for reminder in reminder_objects:
-            if reminder.time == sa_time:
+            if str(reminder.time.strftime("%H:%M")) == str(sa_time.strftime("%H:%M")):
                 send_notification.send_notification(reminder.todo_item)
                 print('Reminder Notification Sent!')
+                reminder.delete()
         return context
 
 
