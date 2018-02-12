@@ -19,6 +19,7 @@ from .scripts import rss_feed, tweet_feed
 from datetime import datetime
 from datetime import date
 from pytz import timezone
+import requests
 
 
 class Home(TemplateView):
@@ -56,12 +57,28 @@ class Home(TemplateView):
                         context['current_item'] = item
                         # context['current_item_end_time'] = item.end_time
                         #
-        item = context['current_item']
+        item = context['current_item'] # TODO: BUG WITH CURRENT ITEM!
         adjust_end_time = datetime.combine(d, item.end_time)
         if adjust_end_time < sa_time.replace(tzinfo=None):
             context['change'] = True
         else:
             context['change'] = False
+
+        r = requests.get('http://127.0.0.1:8000/profiles/?format=json')
+        context['job_track'] = r.json()
+        company_list = []
+        profiles = {}
+        for profile in r.json():
+            company_name = profile.get('company_name')
+            company_list.append(company_name)
+        for num in range(len(company_list)):
+            temp_li = []
+            for profile in r.json():
+                company_name = profile.get('company_name')
+                if company_list[num] == company_name:
+                    temp_li.append(profile.get('linkedin_url'))
+            profiles[company_list[0]] = temp_li
+        context['job_track'] = profiles
         return context
 
 
