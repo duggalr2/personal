@@ -48,7 +48,8 @@
 
 
   <div class="column">
-      <button type="button" id="test">Schedule</button> <a href="{% url 'reminder_create' %}">Create Reminder</a> <br/>
+      <button type="button" id="test">Schedule</button> <a href="{% url 'reminder_create' %}">Create Reminder</a>
+      <a href="https://calendar.google.com/calendar/r">Update Schedule </a> <br/>
 
       {% for day in schedule %}
           {% if day.day_id == current_day %}

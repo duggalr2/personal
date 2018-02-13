@@ -11,11 +11,11 @@
 # from django.views.generic.list import ListView
 # from multi_form_view import MultiModelFormView
 from django.shortcuts import render, redirect
-from .models import Book, Project, Course, FeedDetail, Tweet, TodoItem, Reminder
+from .models import Book, Project, Course, FeedDetail, Tweet, TodoItem, Reminder, Day
 from .forms import CourseForm, ProjectForm, BookForm, ReminderForm
 from django.views.generic import UpdateView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404
-from .scripts import rss_feed, tweet_feed, send_notification
+from .scripts import rss_feed, tweet_feed, send_notification, quickstart
 from datetime import datetime
 from datetime import date
 from pytz import timezone
@@ -57,12 +57,14 @@ class Home(TemplateView):
                         # context['current_item_end_time'] = item.end_time
 
         item = context['current_item'] # TODO: BUG WITH CURRENT ITEM; In between rest time, shows error with current_item
-        adjust_end_time = datetime.combine(d, item.end_time)
-        if adjust_end_time < sa_time.replace(tzinfo=None):
-            context['change'] = True
-        else:
-            context['change'] = False
+        if item is not None:
+            adjust_end_time = datetime.combine(d, item.end_time)
+            if adjust_end_time < sa_time.replace(tzinfo=None):
+                context['change'] = True
+            else:
+                context['change'] = False
 
+        # Job Tracking
         r = requests.get('http://127.0.0.1:8000/profiles/?format=json')
         context['job_track'] = r.json()
 
@@ -87,6 +89,13 @@ class Home(TemplateView):
                 send_notification.send_notification(reminder.todo_item)
                 print('Reminder Notification Sent!')
                 reminder.delete()
+
+        # Checking the schedule
+        day_in_db = Day.objects.all()[0].day
+        if datetime.now().strftime("%A") != day_in_db:
+            Day.objects.all().delete()
+            TodoItem.objects.all().delete()
+            quickstart.main()
         return context
 
 

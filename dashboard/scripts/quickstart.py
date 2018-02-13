@@ -3,6 +3,7 @@ import httplib2
 import os
 import sqlite3
 import dateutil.parser
+from pytz import timezone
 
 from apiclient import discovery
 from oauth2client import client
@@ -13,7 +14,7 @@ import datetime
 
 try:
     import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+    flags = tools.argparser.parse_args([])
 except ImportError:
     flags = None
 
@@ -64,35 +65,25 @@ def fetch_events():
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('calendar', 'v3', http=http)
 
-    min = datetime.datetime.utcnow().replace(hour=6, minute=00).isoformat() + 'Z' # 'Z' indicates UTC time
-    max = datetime.datetime.utcnow().replace(hour=23, minute=50).isoformat() + 'Z'
+    now_time = timezone('US/Eastern')
+    min = datetime.datetime.now(now_time).replace(hour=6, minute=00).isoformat()
+    max = datetime.datetime.now(now_time).replace(hour=23, minute=50).isoformat()
     current_day = datetime.datetime.now().strftime("%A")
 
-    print('Getting the upcoming 10 events')
     eventsResult = service.events().list(
-        calendarId='primary', timeMin=min, timeMax=max, maxResults=10, singleEvents=True,
-        orderBy='startTime').execute()
+        calendarId='primary', timeMin=min, timeMax=max, singleEvents=True, orderBy='startTime').execute()
     events = eventsResult.get('items', [])
 
     if not events:
         print('No upcoming events found.')
 
     return current_day, events
-    # for event in events:
-    #     print(event['start'], event['summary'])
-
-        # print(event['summary'])
-        # time = event['start'].get('dateTime')
-        # print(time)
-        # start = event['start'].get('dateTime', event['start'].get('date'))
-        # print(start, event['summary'])
-
 
 conn = sqlite3.connect('/Users/Rahul/Desktop/Side_projects/personal/db.sqlite3', check_same_thread=False)
 c = conn.cursor()
 
 
-def get_recent_p(tablename):
+def get_recent_pk(tablename):
     c.execute('SELECT MAX(id) FROM %s' % tablename)
     line_recent_primary_key = c.fetchone()
     if line_recent_primary_key[0] is None:
@@ -119,8 +110,8 @@ def add_todoitem(todoitem_pk, current_day, start_time, end_time, todo_item):
 
 
 def main():
-    day_pk = get_recent_p('dashboard_day')
-    todoitem_pk = get_recent_p('dashboard_todoitem')
+    day_pk = get_recent_pk('dashboard_day')
+    todoitem_pk = get_recent_pk('dashboard_todoitem')
     current_day, events = fetch_events()
     add_day(current_day, day_pk)
     for event in events:
@@ -130,43 +121,4 @@ def main():
         todo_item = event['summary']
         todoitem_pk += 1
         add_todoitem(todoitem_pk, current_day, start_time, end_time, todo_item)
-
-
-if __name__ == '__main__':
-    main()
-
-
-
-# add()
-
-    # c.execute('INSERT INTO dashboard_day (id, day) VALUES (?, ?)', (day_pk+1, current_day))
-    # conn.commit()
-
-
-# c.execute('INSERT INTO dashboard_todoitem (id, day_id, todo_item, start_time, end_time) VALUES (?, ?, ?, ?, ?)',
-#           (line_recent_primary_key, day, todo_item, start_time, end_time))
-# conn.commit()
-
-# class Day(models.Model):
-#     day = models.CharField(max_length=500)
-#
-#
-# class TodoItem(models.Model):
-#     day = models.ForeignKey(Day, on_delete=models.CASCADE)
-#     todo_item = models.CharField(max_length=2000)
-#     start_time = models.TimeField()
-#     end_time = models.TimeField()
-
-
-# if __name__ == '__main__':
-#     fetch_events()
-
-
-# {'organizer': {'email': 'duggalr42@gmail.com', 'self': True},
-#  'kind': 'calendar#event', 'creator': {'email': 'duggalr42@gmail.com', 'self': True},
-# 'summary': 'ad', 'start': {'dateTime': '2018-02-13T11:00:00-05:00'},
-# 'created': '2018-02-13T19:50:04.000Z', 'end': {'dateTime': '2018-02-13T14:30:00-05:00'},
-# 'sequence': 0, 'id': '5roubr7l0iup4p0tgpob3g47pr', 'updated': '2018-02-13T19:50:04.950Z',
-# 'status': 'confirmed', 'iCalUID': '5roubr7l0iup4p0tgpob3g47pr@google.com', 'etag': '"3037102809900000"',
-# 'htmlLink': 'https://www.google.com/calendar/event?eid=NXJvdWJyN2wwaXVwNHAwdGdwb2IzZzQ3cHIgZHVnZ2FscjQyQG0',
-# 'reminders': {'useDefault': True}}
+    print('Done.')
