@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d3deda9-3924-4c0c-a817-f1de10812cb4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/scripts/quickstart.py" afterPath="$PROJECT_DIR$/dashboard/scripts/quickstart.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
@@ -19,7 +19,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/personal$rss_feed.coverage" NAME="rss_feed Coverage Results" MODIFIED="1517861990692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/scripts" />
-    <SUITE FILE_PATH="coverage/personal$quickstart.coverage" NAME="quickstart Coverage Results" MODIFIED="1518554102638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/scripts" />
+    <SUITE FILE_PATH="coverage/personal$quickstart.coverage" NAME="quickstart Coverage Results" MODIFIED="1518557893921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/scripts" />
     <SUITE FILE_PATH="coverage/personal$tweet_feed.coverage" NAME="tweet_feed Coverage Results" MODIFIED="1517338325642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/scripts" />
     <SUITE FILE_PATH="coverage/personal$send_notification.coverage" NAME="send_notification Coverage Results" MODIFIED="1518472824094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/scripts" />
     <SUITE FILE_PATH="coverage/personal$yeys.coverage" NAME="yeys Coverage Results" MODIFIED="1518470163873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/scripts" />
@@ -81,29 +81,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="367">
+              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
               <folding>
                 <element signature="e#563#608#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quickstart.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard/scripts/quickstart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-                <marker date="1518555149500" expanded="true" signature="2873:2893" ph="SELECT MAX(i... missing_value" />
-                <marker date="1518555149500" expanded="true" signature="2873:2895" ph="SELECT MAX(i... " />
-                <marker date="1518555149500" expanded="true" signature="3305:3354" ph="INSERT INTO dashboard_day... " />
-                <marker date="1518555149500" expanded="true" signature="3494:3593" ph="INSERT INTO dashboard_todoitem... " />
               </folding>
             </state>
           </provider>
@@ -112,23 +96,10 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="50" column="64" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parse_schedule.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/scripts/parse_schedule.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="54" selection-end-column="21" />
+            <state relative-caret-position="-1467">
+              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
               <folding>
-                <marker date="1517425976174" expanded="true" signature="579:612" ph="SELECT MAX(i... dashboard_day" />
-                <marker date="1517425976174" expanded="true" signature="795:833" ph="SELECT MAX(i... dashboard_todoitem" />
-                <marker date="1517425976174" expanded="true" signature="1136:1185" ph="INSERT INTO dashboard_day... " />
-                <marker date="1517425976174" expanded="true" signature="1568:1667" ph="INSERT INTO dashboard_todoitem... " />
+                <element signature="n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -137,9 +108,24 @@
       <file leaf-file-name="rss_feed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/scripts/rss_feed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="33" selection-end-column="17" />
+            <state relative-caret-position="360">
+              <caret line="39" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quickstart.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/scripts/quickstart.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+              <folding>
+                <marker date="1518557898046" expanded="true" signature="2873:2893" ph="SELECT MAX(i... missing_value" />
+                <marker date="1518557898046" expanded="true" signature="2873:2895" ph="SELECT MAX(i... " />
+                <marker date="1518557898046" expanded="true" signature="3305:3354" ph="INSERT INTO dashboard_day... " />
+                <marker date="1518557898046" expanded="true" signature="3494:3593" ph="INSERT INTO dashboard_todoitem... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,8 +165,8 @@
         <option value="$PROJECT_DIR$/dashboard/scripts/yeys.py" />
         <option value="$PROJECT_DIR$/dashboard/scripts/send_notification.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/dashboard/views.py" />
         <option value="$PROJECT_DIR$/dashboard/scripts/quickstart.py" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
       </list>
     </option>
   </component>
@@ -310,7 +296,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="q&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/quickstart.py&#10;ho&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;qu&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/quickstart.py&#10;vi&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;view&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;pa&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;qui&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/quickstart.py&#10;pars&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;mod&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;mode&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;moa&#9;null&#9;null&#10;v&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;send&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/send_notification.py&#10;push&#9;null&#9;null&#10;pushbullet&#9;null&#9;null&#10;vie&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;h&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;hom&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;viuew&#9;null&#9;null&#10;vview&#9;null&#9;null&#10;sche&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/schedule&#10;vuew&#9;null&#9;null&#10;set&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/settings.py&#10;vierw&#9;null&#9;null&#10;fo&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;form&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;ur&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;urls&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;forms&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;home&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;for&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;go&#9;null&#9;null&#10;png&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/my_project_visualized.png&#10;bas&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/base.html&#10;par&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;mo&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;s&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/schedule&#10;sc&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/schedule&#10;o&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;sch&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;mp&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;r&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/rss_feed.py&#10;p&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;rss&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/rss_feed.py&#10;rr&#9;null&#9;null&#10;rs&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/rss_feed.py&#10;twe&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/tweet_feed.py&#10;url&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;tw&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/tweet_feed.py" />
+    <property name="SearchEverywhereHistoryKey" value="vie&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;qui&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/quickstart.py&#10;h&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;ho&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;q&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/quickstart.py&#10;qu&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/quickstart.py&#10;vi&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;view&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;pa&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;pars&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;mod&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;mode&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;moa&#9;null&#9;null&#10;v&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/views.py&#10;send&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/send_notification.py&#10;push&#9;null&#9;null&#10;pushbullet&#9;null&#9;null&#10;hom&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;viuew&#9;null&#9;null&#10;vview&#9;null&#9;null&#10;sche&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/schedule&#10;vuew&#9;null&#9;null&#10;set&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/settings.py&#10;vierw&#9;null&#9;null&#10;fo&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;form&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;ur&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;urls&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;forms&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;home&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;for&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/forms.py&#10;go&#9;null&#9;null&#10;png&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/my_project_visualized.png&#10;bas&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/base.html&#10;par&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;mo&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;s&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/schedule&#10;sc&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/schedule&#10;o&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/templates/home.html&#10;sch&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;mp&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/models.py&#10;r&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/rss_feed.py&#10;p&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/parse_schedule.py&#10;rss&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/rss_feed.py&#10;rr&#9;null&#9;null&#10;rs&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/rss_feed.py&#10;twe&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/tweet_feed.py&#10;url&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/personal/urls.py&#10;tw&#9;FILE&#9;file:///Users/Rahul/Desktop/Side_projects/personal/dashboard/scripts/tweet_feed.py" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Python.quickstart">
@@ -825,7 +811,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -867,7 +855,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1052,27 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/scripts/rss_feed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="33" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/scripts/parse_schedule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="54" selection-end-column="21" />
-          <folding>
-            <marker date="1517425976174" expanded="true" signature="579:612" ph="SELECT MAX(i... dashboard_day" />
-            <marker date="1517425976174" expanded="true" signature="795:833" ph="SELECT MAX(i... dashboard_todoitem" />
-            <marker date="1517425976174" expanded="true" signature="1136:1185" ph="INSERT INTO dashboard_day... " />
-            <marker date="1517425976174" expanded="true" signature="1568:1667" ph="INSERT INTO dashboard_todoitem... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1083,34 +1052,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/dashboard/scripts/parse_schedule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="50" column="64" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
-          <folding />
+        <state relative-caret-position="282">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <marker date="1517425976174" expanded="true" signature="579:612" ph="SELECT MAX(i... dashboard_day" />
+            <marker date="1517425976174" expanded="true" signature="795:833" ph="SELECT MAX(i... dashboard_todoitem" />
+            <marker date="1517425976174" expanded="true" signature="1136:1185" ph="INSERT INTO dashboard_day... " />
+            <marker date="1517425976174" expanded="true" signature="1568:1667" ph="INSERT INTO dashboard_todoitem... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+    <entry file="file://$PROJECT_DIR$/dashboard/scripts/rss_feed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="e#563#608#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="39" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/scripts/quickstart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state relative-caret-position="372">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <marker date="1518555149500" expanded="true" signature="2873:2893" ph="SELECT MAX(i... missing_value" />
-            <marker date="1518555149500" expanded="true" signature="2873:2895" ph="SELECT MAX(i... " />
-            <marker date="1518555149500" expanded="true" signature="3305:3354" ph="INSERT INTO dashboard_day... " />
-            <marker date="1518555149500" expanded="true" signature="3494:3593" ph="INSERT INTO dashboard_todoitem... " />
+            <marker date="1518557898046" expanded="true" signature="2873:2893" ph="SELECT MAX(i... missing_value" />
+            <marker date="1518557898046" expanded="true" signature="2873:2895" ph="SELECT MAX(i... " />
+            <marker date="1518557898046" expanded="true" signature="3305:3354" ph="INSERT INTO dashboard_day... " />
+            <marker date="1518557898046" expanded="true" signature="3494:3593" ph="INSERT INTO dashboard_todoitem... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1467">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+          <folding>
+            <element signature="e#563#608#0" expanded="true" />
           </folding>
         </state>
       </provider>

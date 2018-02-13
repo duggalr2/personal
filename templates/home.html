@@ -49,7 +49,12 @@
 
   <div class="column">
       <button type="button" id="test">Schedule</button> <a href="{% url 'reminder_create' %}">Create Reminder</a>
-      <a href="https://calendar.google.com/calendar/r">Update Schedule </a> <br/>
+          <form method="GET" action="">
+            <input href="https://calendar.google.com/calendar/r" type="submit" >Update Schedule </input> <br/>
+
+        </form>
+
+
 
       {% for day in schedule %}
           {% if day.day_id == current_day %}
@@ -178,8 +183,10 @@
 
 
    <script>
- var change = "{{ change }}";
-               console.log(change);
+    var change = "{{ change }}";
+    console.log(change);
+    console.log(localStorage.getItem('popState'));
+
    $(document).ready(function() {
        if(localStorage.getItem('popState') != 'shown'){
                $(window).on('load',function(){
@@ -187,13 +194,10 @@
                    localStorage.setItem('popState', 'shown')
         });
            if(localStorage.getItem('popState') == 'shown'){
-                var change = "{{ change }}";
-                console.log(change);
                if(change == 'True'){
                  localStorage.setItem('popState', 'false')
                }
            }
-
 
        }
    })

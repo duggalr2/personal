@@ -21,7 +21,12 @@ from datetime import date
 from pytz import timezone
 import requests
 
-class Home(TemplateView):
+
+def update_calendar(request):
+    pass
+
+
+class Home(TemplateView): # TODO: NEED TO THINK OF POSSIBLE ERROR CASES!!!! ***TEST THEM***
     context_object_name = 'home_list'
     template_name = 'home.html'
 
@@ -46,23 +51,26 @@ class Home(TemplateView):
         # y = datetime.combine(d, TodoItem.objects.all()[0].start_time)
         # print(y.replace(tzinfo=None) <= sa_time.replace(tzinfo=None))
 
-        for item in TodoItem.objects.all():
-            if item.day_id == datetime.now().strftime("%A"):
-                if item.end_time is not None:
-                    y = datetime.combine(d, item.start_time)
-                    w = datetime.combine(d, item.end_time)
-                    if y <= sa_time.replace(tzinfo=None) <= w:
-                        # print(item.todo_item)
-                        context['current_item'] = item
-                        # context['current_item_end_time'] = item.end_time
+        context['current_item'] = None
+        if len(TodoItem.objects.all()) > 0:
+            for item in TodoItem.objects.all():
+                if item.day_id == datetime.now().strftime("%A"):
+                    if item.end_time is not None:
+                        y = datetime.combine(d, item.start_time)
+                        w = datetime.combine(d, item.end_time)
+                        if y <= sa_time.replace(tzinfo=None) <= w:
+                            context['current_item'] = item
+                            # context['current_item_end_time'] = item.end_time
 
-        item = context['current_item'] # TODO: BUG WITH CURRENT ITEM; In between rest time, shows error with current_item
-        if item is not None:
-            adjust_end_time = datetime.combine(d, item.end_time)
-            if adjust_end_time < sa_time.replace(tzinfo=None):
-                context['change'] = True
-            else:
-                context['change'] = False
+            # Handling the Localstorage Modal
+            if context['current_item'] is not None:
+                item = context['current_item']
+                adjust_end_time = datetime.combine(d, item.end_time)
+                print(adjust_end_time, sa_time.replace(tzinfo=None))
+                if adjust_end_time < sa_time.replace(tzinfo=None):
+                    context['change'] = True
+                else:
+                    context['change'] = False
 
         # Job Tracking
         r = requests.get('http://127.0.0.1:8000/profiles/?format=json')
@@ -90,12 +98,13 @@ class Home(TemplateView):
                 print('Reminder Notification Sent!')
                 reminder.delete()
 
-        # Checking the schedule
-        day_in_db = Day.objects.all()[0].day
-        if datetime.now().strftime("%A") != day_in_db:
-            Day.objects.all().delete()
-            TodoItem.objects.all().delete()
-            quickstart.main()
+        # Checking and Changing the Schedule on day-to-day basis
+        if len(Day.objects.all()) > 0:
+            day_in_db = Day.objects.all()[0].day
+            if datetime.now().strftime("%A") != day_in_db:
+                Day.objects.all().delete()
+                TodoItem.objects.all().delete()
+                quickstart.main()
         return context
 
 
