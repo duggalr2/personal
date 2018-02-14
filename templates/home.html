@@ -48,12 +48,14 @@
 
 
   <div class="column">
-      <button type="button" id="test">Schedule</button> <a href="{% url 'reminder_create' %}">Create Reminder</a>
-          <form method="GET" action="">
-            <input href="https://calendar.google.com/calendar/r" type="submit" >Update Schedule </input> <br/>
+{#      <button type="button" id="test">Schedule</button> <a href="{% url 'reminder_create' %}">Create Reminder</a>#}
 
+        <form method="post" action="{% url 'reminder_create' %}" class="inline">
+            <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+            <button type="submit" name="submit_param" value="submit_value" class="link-button">
+{#                <a href="https://calendar.google.com/calendar/r/day">This is a link that sends a POST request</a>#}
+            </button>
         </form>
-
 
 
       {% for day in schedule %}
@@ -183,24 +185,34 @@
 
 
    <script>
-    var change = "{{ change }}";
-    console.log(change);
-    console.log(localStorage.getItem('popState'));
-
-   $(document).ready(function() {
-       if(localStorage.getItem('popState') != 'shown'){
-               $(window).on('load',function(){
-                   $('.test').modal('show');
-                   localStorage.setItem('popState', 'shown')
-        });
-           if(localStorage.getItem('popState') == 'shown'){
-               if(change == 'True'){
-                 localStorage.setItem('popState', 'false')
-               }
-           }
-
-       }
-   })
+{#    var change = "{{ change }}";#}
+{#    console.log(change);#}
+{#    console.log(localStorage.getItem('popState'));#}
+{#    localStorage.setItem('popState', 'false');#}
+{#    #}
+{##}
+{#   $(document).ready(function() {#}
+{#       if(localStorage.getItem('popState') != 'shown'){#}
+{#               $(window).on('load',function(){#}
+{#                   $('.test').modal('show');#}
+{#                   localStorage.setItem('popState', 'shown')#}
+{#        });#}
+{#           if(change == 'True' && localStorage.getItem('popState') != 'shown'){#}
+{#                $(window).on('load',function(){#}
+{#                   $('.test').modal('show');#}
+{#                    localStorage.setItem('popState', 'shown');#}
+{##}
+{#                   localStorage.setItem('popState', 'shown');#}
+{#            elif(change == 'False'){#}
+{#                       #}
+{#                    }#}
+{#           if(localStorage.getItem('popState') == 'shown'){#}
+{#               if(change == 'True'){#}
+{#                 localStorage.setItem('popState', 'false')#}
+{#               }#}
+{#           })#}
+{#       }#}
+{#   })#}
 
    </script>
 
@@ -221,3 +233,7 @@
 $(window).on('load',function(){
         $('.test').modal('show');
     });
+
+Bugs:
+-LocalStorage for Modal showing current item
+-When creating the schedule, should call quickstart script

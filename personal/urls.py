@@ -36,5 +36,6 @@ urlpatterns = [
     url(r'^tweet/', views.tweetFeed, name='tweetFeed'),
     url(r'^reminder_create$', views.reminder_create, name='reminder_create'),
     url(r'^reminder_delete/(?P<pk>\d+)$', views.reminder_delete, name='reminder_delete'),
+    url(r'^update_calendar/', views.update_calendar, name='update_calendar'),
 ]
 

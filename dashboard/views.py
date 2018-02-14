@@ -23,10 +23,11 @@ import requests
 
 
 def update_calendar(request):
-    pass
+    print('it worked')
+    return redirect('home')
 
 
-class Home(TemplateView): # TODO: NEED TO THINK OF POSSIBLE ERROR CASES!!!! ***TEST THEM***
+class Home(TemplateView):  # TODO: NEED TO THINK OF POSSIBLE ERROR CASES!!!! ***TEST THEM***
     context_object_name = 'home_list'
     template_name = 'home.html'
 
@@ -52,6 +53,7 @@ class Home(TemplateView): # TODO: NEED TO THINK OF POSSIBLE ERROR CASES!!!! ***T
         # print(y.replace(tzinfo=None) <= sa_time.replace(tzinfo=None))
 
         context['current_item'] = None
+        all_items_shown = {}
         if len(TodoItem.objects.all()) > 0:
             for item in TodoItem.objects.all():
                 if item.day_id == datetime.now().strftime("%A"):
@@ -59,18 +61,50 @@ class Home(TemplateView): # TODO: NEED TO THINK OF POSSIBLE ERROR CASES!!!! ***T
                         y = datetime.combine(d, item.start_time)
                         w = datetime.combine(d, item.end_time)
                         if y <= sa_time.replace(tzinfo=None) <= w:
+                            print(item.id, item.todo_item)
+                            print(context['current_item'])
+                            all_items_shown[item.id] = item
+                            if context['current_item'] is None:
+                                context['change'] = True
+                            elif all_items_shown[item.id]!= item.id:
+                                context['change'] = True
+                            else:
+                                context['change'] = False
                             context['current_item'] = item
-                            # context['current_item_end_time'] = item.end_time
+                            print(context['change'])
 
-            # Handling the Localstorage Modal
-            if context['current_item'] is not None:
-                item = context['current_item']
-                adjust_end_time = datetime.combine(d, item.end_time)
-                print(adjust_end_time, sa_time.replace(tzinfo=None))
-                if adjust_end_time < sa_time.replace(tzinfo=None):
-                    context['change'] = True
-                else:
-                    context['change'] = False
+
+            # # Handling the Localstorage Modal
+            # if context['current_item'] is not None:
+            #     # all_items_shown.get()
+            #
+            #
+            #     # item = context['current_item']
+            #
+            #
+            #
+            #     # 2018 - 02 - 14
+            #     # 14:22:00
+            #     # 2018 - 02 - 14
+            #     # 14:38:04.030442
+            #     # print(TodoItem.objects.all())
+            #     adjust_start_time = datetime.combine(d, item.start_time)
+            #     print(adjust_start_time, sa_time.replace(tzinfo=None))
+            #     if adjust_start_time >= sa_time.replace(tzinfo=None):
+            #         context['change'] = True
+            #     else:
+            #         context['change'] = False
+
+
+
+                # adjust_end_time = datetime.combine(d, item.end_time)
+                # # print(adjust_end_time, sa_time.replace(tzinfo=None))
+                # print(adjust_end_time, sa_time.replace(tzinfo=None))
+
+                # if adjust_end_time < sa_time.replace(tzinfo=None):
+                #     context['change'] = True
+                # else:
+                #     context['change'] = False
 
         # Job Tracking
         r = requests.get('http://127.0.0.1:8000/profiles/?format=json')
@@ -98,6 +132,7 @@ class Home(TemplateView): # TODO: NEED TO THINK OF POSSIBLE ERROR CASES!!!! ***T
                 print('Reminder Notification Sent!')
                 reminder.delete()
 
+        # quickstart.main()
         # Checking and Changing the Schedule on day-to-day basis
         if len(Day.objects.all()) > 0:
             day_in_db = Day.objects.all()[0].day
@@ -218,4 +253,3 @@ def reminder_delete(request, pk):
 
 def update_session(request):
     request.session['view'] = False
-
